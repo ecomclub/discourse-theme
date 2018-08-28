@@ -1,3 +1,17 @@
+//----------------------------------------
+// Color system
+//----------------------------------------
+$blue:                            #03a9b3;
+$indigo:                          #33003c;
+$purple:                          #37003c;
+$pink:                            #e60152;
+$red:                             #fe0002;
+$orange:                          #ff5600;
+$yellow:                          #dff200;
+$green:                           #00e679;
+$teal:                            #00a658;
+$cyan:                            #0479e6;
+
 /* Start: Fira Sans */
 @font-face {
     font-family: 'Fira Sans';
@@ -105,6 +119,31 @@ body {
 .latest-topic-list .table-heading,
 .top-topic-list .table-heading {
     color: #757575;
+}
+
+// top header
+header.d-header {
+    padding-top: 0;
+    height: 57px;
+}
+header.d-header .contents {
+    margin: 5px 0 0 0;
+}
+
+// logo
+header.d-header .title > a {
+    color: $purple !important;
+    font-size: 24px;
+    font-weight: 200;
+}
+header.d-header .title > a > img {
+    width: 132px;
+    height: 28px;
+    margin-right: 4px;
+}
+header.d-header .title > a::after {
+    content: 'community';
+    display: inline-block;
 }
 
 // exta
