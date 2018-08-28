@@ -1,0 +1,21 @@
+<script>
+    setTimeout(function () {
+        // fix logo
+        // add or remove 'community' name
+        var $link = $('header.d-header .title > a');
+        var logoSmall = true;
+        var logoChanged = function () {
+            if ($link.find('.logo-small').length) {
+                if (!logoSmall) {
+                    $link.find('span').remove();
+                    logoSmall = true;
+                }
+            } else if (logoSmall) {
+                $link.append('<span>community</span>');
+                logoSmall = false;
+            }
+        };
+        logoChanged();
+        $(window).scroll(logoChanged);
+    }, 400);
+</script>

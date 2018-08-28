@@ -2,15 +2,12 @@
 // Color system
 //----------------------------------------
 $blue:                            #03a9b3;
-$indigo:                          #33003c;
 $purple:                          #37003c;
-$pink:                            #e60152;
+$pink:                            #ff015b;
 $red:                             #fe0002;
 $orange:                          #ff5600;
 $yellow:                          #dff200;
 $green:                           #00e679;
-$teal:                            #00a658;
-$cyan:                            #0479e6;
 
 /* Start: Fira Sans */
 @font-face {
@@ -135,15 +132,45 @@ header.d-header .title > a {
     color: $purple !important;
     font-size: 24px;
     font-weight: 200;
+    width: 253px;
+}
+header.d-header .title > a > span {
+    display: inline-block;
 }
 header.d-header .title > a > img {
     width: 132px;
     height: 28px;
     margin-right: 4px;
-}
-header.d-header .title > a::after {
-    content: 'community';
     display: inline-block;
+}
+header.d-header .title > a > img.logo-small {
+    width: auto;
+}
+
+// header title
+header.d-header .title-wrapper {
+    margin-left: 15px;
+}
+header.d-header .title-wrapper h1 {
+    font-size: 1.3em;
+}
+header.d-header .title-wrapper .badge-wrapper {
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+// buttons
+.list-controls .combo-box .combo-box-header,
+.btn {
+    letter-spacing: 1px;
+    border-radius: 2px;
+    background-color: #fcfdfe;
+    border: 1px solid #ebebeb;
+    color: #8b95a5;
+}
+.select-kit.combo-box .select-kit-header.is-focused {
+    border: 1px solid #ebebeb;
+    box-shadow: 0 0 6px 0 #ebebeb;
 }
 
 // exta
