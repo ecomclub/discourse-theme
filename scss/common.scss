@@ -3,14 +3,13 @@
 //----------------------------------------
 $blue:                            #03a9b3;
 $purple:                          #37003c;
-$purple-dark:                     darken($purple, 5.5%);
-$purple-darkest:                  darken($purple, 8.1%);
 $pink:                            #ff015b;
 $red:                             #fe0002;
 $orange:                          #ff5600;
 $yellow:                          #dff200;
 $green:                           #00e679;
 $white:                           #ffffff;
+$highlight:                       #f1e5f2;
 
 /* Start: Fira Sans */
 @font-face {
@@ -101,35 +100,11 @@ $white:                           #ffffff;
 
 body {
     font-family: "Fira Sans",sans-serif;
-    font-size: 1.0525rem;
-    font-weight: 300;
-    line-height: 1.9;
-    color: #757575;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
     text-align: left;
-}
-
-// fix text colors
-.topic-list-item.visited a.title:not(.badge-notification),
-.latest-topic-list-item.visited a.title:not(.badge-notification),
-.category-topic-link.visited a.title:not(.badge-notification),
-.list-cell,
-.table-heading,
-.category-list td,
-.category-list th,
-.latest-topic-list .table-heading,
-.top-topic-list .table-heading {
-    color: #757575;
-}
-
-// top header
-@media (min-width: 576px) {
-    header.d-header {
-        padding-top: 0;
-        height: 57px;
-    }
-    header.d-header .contents {
-        margin: 5px 0 0 0;
-    }
 }
 
 // logo
@@ -152,13 +127,13 @@ header.d-header .title > a > span {
         align-items: center;
         height: 45px;
     }
-    header.d-header .title > a > img {
+    header.d-header #site-logo {
         width: 132px;
         height: 28px;
         margin-right: 4px;
     }
 }
-@media (max-width: 577px) {
+@media (max-width: 575px) {
     header.d-header .title > a > span {
         font-size: 16px;
         text-align: center;
@@ -166,87 +141,104 @@ header.d-header .title > a > span {
         width: 100%;
         margin-top: 2px;
     }
-    header.d-header .title > a > img {
+    header.d-header #site-logo {
         width: 118px;
         height: 25px;
     }
 }
-header.d-header .title > a > img.logo-small {
+header.d-header #site-logo.logo-small {
     width: auto;
 }
 
 // header title
 header.d-header .title-wrapper {
-    margin-left: 15px;
-}
-header.d-header .title-wrapper h1 {
-    font-size: 1.3em;
-}
-header.d-header .title-wrapper .badge-wrapper {
-    font-weight: 400;
-    line-height: 1.2;
+    margin-left: 10px;
 }
 
-// buttons
-.list-controls .combo-box .combo-box-header,
-.select-kit.dropdown-select-box .dropdown-select-box-header,
-.btn,
+// purple nav buttons
 #navigation-bar.nav-pills > li > a {
-    display: inline-block;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    font-size: 14px !important;
-    padding: 5px 16px !important;
-    line-height: inherit;
-    letter-spacing: 1px;
-    border-radius: 2px;
-    border: 1px solid transparent;
-    outline: none !important;
-    transition: 0.15s linear;
+    color: $purple;
 }
-// button sizes
-.btn-small,
-.btn-sm {
-    font-size: 12px !important;
-    padding: 4px 12px !important;
-    line-height: 20px;
-}
-// default button light
-.list-controls .combo-box .combo-box-header,
-.select-kit.dropdown-select-box .dropdown-select-box-header,
-.btn-default,
-.btn-light {
-    background-color: #fcfdfe;
-    border-color: #ebebeb;
-    color: #8b95a5;
-}
-.select-kit.combo-box .select-kit-header.is-focused {
-    border: 1px solid #ebebeb;
-    box-shadow: 0 0 6px 0 #ebebeb;
-}
-// purple buttons
-#navigation-bar.nav-pills > li > a {
-    background-color: $purple;
+#navigation-bar.nav-pills > li > a:hover {
+    background-color: rgba($purple, .15);
     border-color: $purple;
-    color: $white !important;
 }
 #navigation-bar.nav-pills > li.active > a,
 #navigation-bar.nav-pills > li > a.active {
-    background-color: $purple-dark;
-    border-color: $purple-dark;
-}
-#navigation-bar.nav-pills > li > a:hover {
-    background-color: $purple-darkest;
-    border-color: $purple-darkest;
+    background-color: $purple;
+    border-color: $purple;
+    color: $white;
+    cursor: auto;
 }
 
-// exta
-img.avatar {
-    border-radius: 0;
+// general nav
+.nav-pills > li > a.active {
+    background: $blue;
+    color: $white;
+}
+.nav-pills > li > a:hover {
+    background: darken($blue, 7.5%);
+    color: $white;
+}
+
+// alerts
+.alert.alert-info {
+    background-color: lighten($pink, 45%);
+}
+
+// buttons
+.btn-primary {
+    background-color: $pink;
+}
+.btn-primary:hover {
+    background-color: darken($pink, 7.5%) !important;
+}
+
+// links
+a,
+a:visited,
+.btn-link {
+    color: $pink;
+}
+a:hover,
+.btn-link:hover {
+    color: darken($pink, 10%);
+}
+
+// header menu
+.menu-links a {
+    color: $purple;
+}
+
+// select menus
+.select-kit .select-kit-row.is-highlighted {
+    background: $highlight;
+}
+
+// topic progress bar
+#topic-progress {
+    border-color: $highlight;
+    color: $purple;
+}
+#topic-progress .bg {
+    border-color: $highlight;
+    background-color: $highlight;
+}
+
+// topic timeline
+.timeline-container .topic-timeline .timeline-scrollarea {
+    border-color: $purple !important;
+}
+.timeline-container .topic-timeline .timeline-handle {
+    background: $purple;
+}
+
+// topic background effect
+@keyframes background-fade-highlight {
+    0% {
+        background-color: #f7f7f7;
+    }
+    100% {
+        background-color: transparent;
+    }
 }
