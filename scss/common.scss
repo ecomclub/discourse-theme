@@ -148,11 +148,12 @@ header.d-header .title > a > span {
 }
 header.d-header #site-logo.logo-small {
     width: auto;
+    height: 35px;
 }
 
 // header title
 header.d-header .title-wrapper {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 // purple nav buttons
@@ -240,5 +241,13 @@ a:hover,
     }
     100% {
         background-color: transparent;
+    }
+}
+
+// fix team and system avatar
+[href="/u/system"],
+[href="/u/team"] {
+    .avatar {
+        border-radius: 0;
     }
 }
